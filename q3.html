@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Tax Calculator</title>
+</head>
+<body>
+    <h1>Employee Tax Calculator</h1>
+    <script>
+        // Prompt user for input
+        let employeeName = prompt("Enter employee name:");
+        let hoursWorked = parseFloat(prompt("Enter hours worked:"));
+        let ratePerHour = parseFloat(prompt("Enter rate per hour:"));
+
+        // Calculate basic pay
+        let basicPay = hoursWorked * ratePerHour;
+
+        // Calculate tax based on basic pay
+        let tax;
+        if (basicPay > 50000) {
+            tax = basicPay * 0.20;
+        } else if (basicPay >= 20000 && basicPay <= 50000) {
+            tax = basicPay * 0.10;
+        } else {
+            tax = 0;
+        }
+
+        // Display the results
+        alert("Employee Name: " + employeeName +
+              "\nBasic Pay: " + basicPay.toFixed(2) +
+              "\nTax: " + tax.toFixed(2));
+    </script>
+</body>
+</html>
